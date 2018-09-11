@@ -1,0 +1,16 @@
+﻿@using Microsoft.Ajax.Utilities
+@model Vidly.Models.Customer
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Name</h2>
+<ul>
+    <li>Membership Type: <strong>@Model.MembershipType.Name</strong></li>
+    @if (Model.DateOfBirth > DateTime.Parse("1900-01-01"))
+    {
+        <li>Birthdate: @Model.DateOfBirth.ToShortDateString()</li>
+    }
+</ul>
+
